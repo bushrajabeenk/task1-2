@@ -1,0 +1,39 @@
+Task-1
+
+1 Ans:
+Http 1.1 requests and responses in plain text format
+Http 2 uses a binary frame layer for the binary format encapsulation of messages.
+Conversion of messages into binary data allows the data delivery in various ways in Http 2
+unlike in Http 1.1
+Splitting up the data into binary format makes the data transfer flexible.
+Http 1.1 relies on the transport layer to control the buffer flow for data transmission and
+reception.
+Http 2 allows the client and server to implement their independent flow controls.
+Http 2 allows compression of http messages between client and server which is not the case in
+Http 1.1.
+
+2 Ans:
+Year HTTP Version
+1996 1.0
+1997 1.1
+2015 2.0
+Draft (2020) 3.0
+
+3 Ans:
+1)Node js allows to use a single language both on the server and client side unlike Browser js.
+2)Browser js provides objects like document window and cookies or DOM interaction, which is
+not present in Node js.
+3)In Node js you control the environment, the version on which you want to run the application
+on, which isn't possible in Browser js. You cannot know which platform the user will run the
+application on.
+4)Node js uses modules for everything, while Browser js doesn't mandate the modules on client
+side.
+5) Node js processes request objects and Browser js processes response objects.
+4 Ans:
+The browser looks up the IP address for the domain name via DNS
+The browser sends a HTTP request to the server
+The server sends back a HTTP response
+The browser begins rendering the HTML
+The browser sends requests for additional objects embedded in HTML (images, css, JavaScript)
+and repeats steps 3-5.
+Once the page is loaded, the browser sends further async requests as needed.
