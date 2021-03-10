@@ -1,0 +1,32 @@
+Task 2-part 1
+
+Answer 1:
+COPY BY VALUE
+The value is actually copied; there are two distinct, independent copies.
+A distinct copy of the value is passed to the function; changes to it have no effect outside the
+function.
+Two distinct values are compared (often byte by byte) to see if they are the same value.
+COPY BY REFERENCE
+Only a reference to the value is copied. If the value is modified through the new reference, that
+change is also visible through the original reference.
+A reference to the value is passed to the function. If the function modifies the value through the
+passed reference, the modification is visible outside the function. docstore.
+Two references are compared to see if they refer to the same value. Two references to distinct
+values are not equal, even if the two values consist of the same bytes.
+
+Answer 2:
+1.Use the spread (...) syntax.
+2.Use the Object.assign() method.
+3.Use the JSON.stringify() and JSON.parse() methods.
+const person = {
+firstName: 'John',
+lastName: 'Doe'
+};
+// using spread ...
+let p1 = {
+...person
+};
+// using Object.assign() method
+let p2 = Object.assign({}, person);
+// using JSON
+let p3 = JSON.parse(JSON.stringify(person));
