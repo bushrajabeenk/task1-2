@@ -1,0 +1,324 @@
+PROGRAM 0-PART A
+
+var cat = {
+ name: "Fluffy",
+ activities: ["play", "eat cat food"],
+ catFriends: [
+ {
+ name: "bar",
+ activities: ["be grumpy", "eat bread omblet"],
+ weight: 8,
+ furcolor: "white"
+ }, 
+ {
+ name: "foo",
+ activities: ["sleep", "pre-sleep naps"],
+ weight: 3
+ }
+ ]
+}
+cat.weight = "10";
+cat.height = "5.8";
+cat.name = "Fluffyy";
+for(let i in cat.catFriends){
+    console.log(cat.catFriends[i].activities);
+}
+for(let j in cat.catFriends){
+    console.log(cat.catFriends[j].name);
+}
+cat.catFriends[0].furcolor = "black";
+console.log(parseInt(cat.catFriends[0].weight + cat.catFriends[1].weight));
+
+console.log(cat);
+
+
+
+
+PROGRAM 0-PART B
+
+var myCar = {
+ make: "Bugatti",
+ model: "Bugatti La Voiture Noire",
+ year: 2019,
+ accidents: [
+ {
+ date: "3/15/2019",
+ damage_points: "5000",
+ atFaultForAccident: true
+ },
+ {
+ date: "7/4/2022",
+ damage_points: "2200",
+ atFaultForAccident: true
+ },
+ {
+ date: "6/22/2021",
+ damage_points: "7900",
+ atFaultForAccident: true
+ }
+ ]
+}
+myCar.accidents[0].atFaultForAccident = "false";
+myCar.accidents[1].atFaultForAccident = "false";
+myCar.accidents[2].atFaultForAccident = "false";
+console.log(myCar);
+for(let i in myCar.accidents){
+console.log(myCar.accidents[i].date);
+}
+
+
+
+PROBLEM 1
+
+var obj = {name : "RajiniKanth", age : 33, hasPets : false};
+function printAllValues(obj) {
+    
+ console.log(Object.values(obj));
+}
+printAllValues(obj);
+
+
+
+
+PROBLEM 2
+
+var obj = {name : "RajiniKanth", age : 25, hasPets : true};
+function printAllKeys(obj) {
+ 
+ console.log(Object.keys(obj));
+ 
+}
+printAllKeys(obj);
+
+
+
+
+PROBLEM 3
+
+var obj = {name: "ISRO", age: 35, role: "Scientist"};
+function convertListToObject(obj) {
+ let res = Object.entries(obj);
+   console.log(res); 
+}
+convertListToObject(obj);
+
+
+
+
+PROBLEM 4
+
+var arr = ["GUVI", "I", "am", "Geek"];
+function transformFirstAndLast(arr) {
+    var newObject = {}
+  arr.forEach(function(){
+  newObject[arr[0]] = arr[arr.length-1]}
+  )
+ return newObject;
+}
+var res = transformFirstAndLast(arr);
+console.log(res);
+
+
+
+
+PROBLEM 5
+
+var arr = [["make", "Ford"], ["model", "Mustang"], ["year", 1964]];
+function fromListToObject(arr) {
+ var newObject = {};
+ var collection = arr;
+  for(var i = 0; i < arr.length; i++){
+    var dataArray =collection[i];
+    for(var j= 0; j < collection[i].length; j++){
+      newObject[dataArray[0]] = dataArray[1]
+    }
+  }
+ 
+ return newObject;
+}
+var res = fromListToObject(arr);
+console.log(res);
+
+
+
+
+PROBLEM 6
+
+var arr= [[["firstName", "Vasanth"], ["lastName", "Raja"], ["age", 24], ["role", "JSWizard"]], [["firstName", "Sri"], ["lastName", "Devi"], ["age", 28], ["role", "Coder"]]];
+function transformEmployeeData(arr) {
+ var tranformEmployeeList = [];
+ var key, value;
+  for (var i = 0; i < arr.length; i++) {      
+    var employee = {}                          
+    for (var j = 0; j < arr[i].length; j++) { 
+      key = arr[i][j][0];                      
+      value = arr[i][j][1];                 
+      employee[key] = value;                   
+    }
+    tranformEmployeeList.push(employee);                    
+  }
+ return tranformEmployeeList;
+}
+var res = transformEmployeeData(arr);
+console.log(res);
+
+
+
+
+PROBLEM 7
+
+var expected = {foo: 5, bar: 6};
+var actual = {foo: 5, bar: 6};
+var testName = {}
+function assertObjectsEqual(actual, expected, testName) {
+  var actualString = JSON.stringify(actual);
+  var expectedString = JSON.stringify(expected);
+  if(actualString != expectedString) {
+    console.log('FAILED [' + testName + '] Expected "' + expected + '", but got "' + actual + '"');
+  } else {
+  console.log("passed");
+  }
+}
+var res = assertObjectsEqual(actual, expected, testName);
+console.log(res);
+
+Output:
+passed
+undefined
+
+var expected = {foo: 5, bar: 6};
+var actual = {foo: 6, bar: 5};
+var testName = {}
+function assertObjectsEqual(actual, expected, testName) {
+  var actualString = JSON.stringify(actual);
+  var expectedString = JSON.stringify(expected);
+  if(actualString != expectedString) {
+    console.log('FAILED [' + testName + '] Expected "' + expected + '", but got "' + actual + '"');
+  } else {
+  console.log("passed");
+  }
+}
+var res = assertObjectsEqual(actual, expected, testName);
+console.log(res);
+
+Output:
+FAILED [[object Object]] Expected "[object Object]", but got "[object Object]"
+undefined
+
+
+
+
+PROBLEM 8 
+
+var securityQuestions = [
+ {
+ question: "What was your first pet’s name?",
+ expectedAnswer: "FlufferNutter"
+ },
+ {
+ question: "What was the model year of your first car?",
+ expectedAnswer: "1985"
+ },
+ {
+ question: "What city were you born in?",
+ expectedAnswer: "NYC"
+ }
+]
+function chksecurityQuestions(securityQuestions,question) {
+ let answerGiven = false;
+ for(let i=0;i<securityQuestions.length;i++){
+     if(securityQuestions[i].question === question){
+         if(securityQuestions[i].expectedAnswer === ans1){
+             answerGiven = true;
+         }
+     }
+ }
+ 
+ return answerGiven; 
+}
+//Test case1:
+var ques1 = "What was your first pet’s name?";
+var ans1  =  "FlufferNutter";
+var status1 = chksecurityQuestions(securityQuestions, ques1, ans1);
+console.log(status1); // true
+//Test case2:
+var ques2 = "What was your first pet’s name?";
+var ans2  =  "DufferNutter";
+var status2 = chksecurityQuestions(securityQuestions, ques2, ans2);
+console.log(status2); //false
+
+Output:
+true
+true
+
+var securityQuestions = [
+ {
+ question: "What was your first pet’s name?",
+ expectedAnswer: "FlufferNutter"
+ },
+ {
+ question: "What was the model year of your first car?",
+ expectedAnswer: "1985"
+ },
+ {
+ question: "What city were you born in?",
+ expectedAnswer: "NYC"
+ }
+]
+function chksecurityQuestions(securityQuestions,question) {
+ let answerGiven = false;
+ for(let i=0;i<securityQuestions.length;i++){
+     if(securityQuestions[i].question === question){
+         if(securityQuestions[i].expectedAnswer === ans2){
+             answerGiven = true;
+         }
+     }
+ }
+ 
+ return answerGiven; 
+}
+//Test case1:
+var ques1 = "What was your first pet’s name?";
+var ans1  =  "FlufferNutter";
+var status1 = chksecurityQuestions(securityQuestions, ques1, ans1);
+console.log(status1); // true
+//Test case2:
+var ques2 = "What was your first pet’s name?";
+var ans2  =  "DufferNutter";
+var status2 = chksecurityQuestions(securityQuestions, ques2, ans2);
+console.log(status2); //false
+
+Output:
+false
+false
+
+
+
+
+PROBLEM 9
+
+var students = [
+ {name: "Siddharth Abhimanyu", age: 21}, 
+ {name: "Malar", age: 25},
+ {name: "Maari", age: 18},
+ {name: "Bhallala Deva", age: 17},
+ {name: "Baahubali", age: 16},
+ {name: "AAK chandran", age: 23},   
+ {name: "Gabbar Singh", age: 33},
+ {name: "Mogambo", age: 53},
+ {name: "Munnabhai", age: 40},
+ {name: "Sher Khan", age: 20},
+ {name: "Chulbul Pandey", age: 19},
+ {name: "Anthony", age: 28},
+ {name: "Devdas", age: 56} 
+ ];
+function returnMinors(students)
+{
+    for(var i in students){
+        if(students[i].age < 20){
+            console.log(students[i].name);
+        }
+    }
+}
+var res = returnMinors(students);
+console.log(res);
