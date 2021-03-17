@@ -29,7 +29,11 @@ for(let j in cat.catFriends){
 cat.catFriends[0].furcolor = "black";
 console.log(parseInt(cat.catFriends[0].weight + cat.catFriends[1].weight));
 
-console.log(cat);
+cat.catFriends[0].activities.push("scratch, swirl");
+cat.catFriends[1].activities.push("twirl around, play with ball");
+
+console.log(JSON.stringify(cat));
+
 
 
 
